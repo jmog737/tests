@@ -1,0 +1,24 @@
+{
+	"idmov":
+		{"nombreMostrar":"Id", "mostrarPantalla":false, "posicion":1},
+	"producto":
+		{"nombreMostrar":"Producto", "mostrarPantalla":false, "posicion":4},
+	"fecha":
+		{"nombreMostrar":"Fecha", "mostrarPantalla":true, "posicion":2},
+	"hora":
+		{"nombreMostrar":"Hora", "mostrarPantalla":true, "posicion":3},
+	"estado":
+		{"nombreMostrar":"Estado", "mostrarPantalla":false, "posicion":5},
+	"cantidad":
+		{"nombreMostrar":"Cantidad", "mostrarPantalla":true, "posicion":7},
+	"comentarios":
+		{"nombreMostrar":"Comentarios", "mostrarPantalla":true, "posicion":8},
+	"tipo":
+		{"nombreMostrar":"Tipo", "mostrarPantalla":true, "posicion":6},
+	"fabricante":
+		{"nombreMostrar":"Fabricante", "mostrarPantalla":false, "posicion":9},
+	"control1":
+		{"nombreMostrar":"Control1", "mostrarPantalla":false, "posicion":10},
+	"control2":
+		{"nombreMostrar":"Control2", "mostrarPantalla":false, "posicion":11}
+	}

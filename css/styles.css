@@ -1,0 +1,443 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+	padding: 1.5% 1.5% 0;
+	background: #b3b3b3;
+	background: #dbe2ef;
+	box-sizing: border-box;
+	margin-top: 1.5%;
+}
+
+/* Estilos para el HEADER: */
+header {
+	/*background: #ff0033;
+	background: #05038c;*/
+	background: #112d4e;
+	padding: 0;
+}
+#header-div {
+	margin: 0;
+	padding: 0;
+}
+
+#logo {
+	background: #339900;
+	background: #023184;
+	background: #112d4e;
+	padding: 0;
+	margin: 0;
+}
+#logo img {
+	max-width: 100%;
+}
+
+#titulo {
+/*	background: #05038c;*/
+	background: #023184;
+	background: #112d4e;
+	text-align: center;
+	line-height: 1.5rem;
+	font-size: 1.5rem;
+	margin: auto;
+	height: 100%;
+}
+#titulo h1, #titulo a {
+	line-height: 2.5rem;
+	font-size: 2.5rem;
+	vertical-align: middle;
+	height: 100%;
+	margin: auto;
+	padding: 0;
+	text-decoration: none;
+	color: #ffffff;
+}
+/* FIN Estilos para el HEADER */
+
+/* Estilos para la barra de navegación: */
+nav {
+	background: #777777;
+	background: #4a4646;
+	margin: 0 auto;
+	padding: 0px;
+	position: fixed;
+	top: 0;
+	left: 1.5%;
+	width: 97%;
+	min-height: 1.5%;
+}
+.nav-item a {
+	color: #ffffff;
+	text-transform: uppercase;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	background: #ff0022;
+	background: #289c57;
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+/* FIN Estilos para la barra de navegación */
+
+/* Estilos para el MAIN: */
+main {
+	overflow: auto;
+	padding-bottom: 2%;
+	margin-top: 1%;
+/*	background: #f198ad;*/
+}
+/* FIN Estilos para el MAIN */
+
+#contenedor {
+	margin: 0;
+	padding: 0;
+}
+
+/* Estilos para el FOOTER: */
+footer {
+	background: #05038c;
+	background: #023184;
+	background: #112d4e;
+	margin: 0;
+	padding: 1% 0;
+	color: #ffffff;
+	text-align: center;
+	position: relative;
+}
+#userInfo {
+	text-align: left;
+}
+footer a {
+	color: #fdf744;
+}
+/* FIN Estilos para el FOOTER */
+
+/* Estilos para la tabla clase CAL */
+table.cal{
+	margin: 1% auto 1%;
+	color: #ffffff;
+	border-collapse: separate;
+	border-radius: 25px 25px 25px 25px;
+	background: #dd473a;
+	background: #3f72af;
+}
+/*Alternate colors between even and odd weeks*/
+/*
+tr:nth-child(odd) {
+	background: #00aaff;
+}
+tr:nth-child(even) {
+	background: #CDBB79;
+}
+tr:last-of-type {
+	background: #CDBB79; 
+	background: #00aaff;
+}
+*/
+.cal tr:last-child>td:first-child {
+/*
+	-webkit-border-radius: 0 0 0 20px;
+	-moz-border-radius: 0 0 0 20px;
+*/
+	border-bottom-left-radius: 20px;
+}
+.cal tr:last-child>td:last-child{
+/*
+	-webkit-border-radius: 0 0 20px 0;
+	-moz-border-radius: 0 0 20px 0;
+*/
+	border-bottom-right-radius: 20px;
+}
+.cal caption {
+	color: #112d4e;
+	text-align: center;
+	font-weight: 650;
+}
+.cal tr:last-child>th:last-child{
+	border-top-right-radius: 20px;
+}
+.cal tr:last-child>th:first-child{
+	border-top-left-radius: 20px;
+}
+.cal tr:last-child>th:first-child:hover{
+	border-top-left-radius: 20px;
+}
+.cal tr:hover {
+	background: #112d4e;
+	font-weight: 600;
+	transform: scaleY(1.25);
+}
+.cal th{
+	text-align: center;
+	background: #FFFFFF;
+	color: #112d4e;
+}
+.cal td{
+	vertical-align: middle;
+/*	padding: 0 0.5% 0.5%;*/
+	border: #c0c0c0 1px solid;
+}
+.cal td, .cal th {
+	padding: 3px;
+}
+.cal a {
+	color: white;
+	text-decoration: none;
+	font-weight: 700;
+	width: 100%;
+}
+/* FIN Estilos para la tabla clase CAL */
+
+/* Estilos ELEMENTOS: */
+a{
+	color: #112d4e;
+	font-size: 110%;
+}
+h1 {
+	margin: 0 auto 1%;
+	text-align: center;
+	text-decoration: underline;
+	font-weight: 600;
+}
+p {
+	margin: 0.5% 0;
+}
+form {
+/*	background: #ffa9c9;*/
+	background: #b9b0b4;
+	padding: 2%;
+	margin: 2% auto 0;
+	max-width: 70%;
+	border-radius: 20px;
+	border: 4px solid #ffffff;
+}
+form div {
+	margin-top: 2%;
+}
+label {
+	font-weight: 600;
+	font-variant-caps: all-small-caps;
+	font-size: 120%;
+	padding-right: 1%;
+}
+
+/*.agrandar:blur {
+	font-size: inherit;
+  background-color: #ffffff;
+  font-weight: inherit;
+  color: inherit;
+}*/
+/*.agrandar:focus {
+	transform: scaleY(1.4);
+  background-color: #e7f128;
+  font-weight: bolder;
+  color: #ff0000;
+}*/
+input[type="text"]:blur, input[type="number"]:blur, textarea:blur {
+	font-size: inherit;
+  background-color: #ffffff;
+  font-weight: inherit;
+  color: inherit;
+}
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+	transform: scaleY(1.4);
+  background-color: #e7f128;
+  font-weight: bolder;
+  color: #ff0000;
+}
+/* FIN Estilos ELEMENTOS */
+
+/* Estilos para el select con la sugerencia de productos: */
+#hint {
+  max-width: 100%;
+  position: relative;
+  overflow-x: scroll;
+  overflow-y: auto;
+}
+#hint option:checked {
+	transform: scaleY(1.2);
+	font-size: 1.25em;
+	font-weight: 600;
+}
+#sinSugerencias {
+	font-weight: 600;
+	font-size: 110%;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+/* FIN Estilos para el select con la sugerencia de productos: */
+
+/* Estilos para el resumen del producto: */
+#promedio1 {
+	padding-top: 1px;
+	margin-top: 1%;
+	margin-bottom: 0px;
+}
+#promedio2 {
+	padding-top: 1px;
+	margin-bottom: 1%;
+}
+#stock {
+/*	padding-top: 10px;*/
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+#ultimoMov {
+	margin-bottom: 0;
+}
+#comentHint {
+	margin-top: 1%;
+	margin-bottom: 0;
+}
+#resumen {
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
+#resumen span {
+	font-size:1.2em; 
+	font-style:italic;
+}
+#ultimoMov span{
+	color: #ff0000;
+	background: #ffffff;
+}
+#historial {
+	margin: 2% auto;
+	padding: 1%;
+	display: block;
+	width: 15%;
+}
+/* FIN Estilos para el resumen del producto */
+
+/* Estilos POPOVERS: */
+.popover{
+  max-width: 100%;
+}
+.popover-header{
+  background-color: #7ef26d;
+	font-weight: 600;
+	font-variant: small-caps;
+}
+.popover-body{
+  background-color: #cccccc;
+}
+.popover-body a:hover {
+	background: #ffeeaa;
+}
+/* FIN Estilos POPOVERS */
+
+/* Estilos para indicar comentarios DENTRO del select hint: */
+.resaltarDiferencia {
+  background-color:#ffff00;
+  font-size: 1.1em;
+  font-weight: bolder;
+  color: red;
+}
+.resaltarStock {
+  background-color: #38ff1d;
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: red;
+}
+.resaltarPlastico {
+  background-color: #ff9999;
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+.resaltarComentario {
+  background-color: #d3d3d3;
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+/* FIN Estilos para indicar comentarios DENTRO del select hint */
+
+/* Estilos para indicar comentarios en el resumen del producto: */
+.comentHintResaltar {
+  background-color:#ffff00;
+  font-size: 1.3em;
+  font-weight: bolder;
+  color: #ff0000;
+}
+.comentHintStock{
+  font-size: 1.3em;
+  font-weight: bolder;
+  color: #ff0000;
+  background-color: #38ff1d;
+}
+.comentHintPlastico{
+  font-size: 1.3em;
+  font-weight: bolder;
+  color: #ff0000;
+  background-color: #ff9999;
+}
+.comentHint{
+  font-size: 1.3em;
+  font-weight: bolder;
+  color: #ff0000;
+  background-color: #d3d3d3;
+}
+/* FIN Estilos para indicar comentarios en el resumen del producto */
+
+/* Estilos para mostrar ALARMAS según stock en id="stock" @ resumen: */
+.sinAlarma {
+  background-color: #9bf79b;
+  font-weight: bolder;
+  font-size: 1.2em;
+  color: red;
+}
+.alarma1 {
+  background-color: #ffff33;
+  font-weight: bolder;
+  font-size: 1.2em;
+  font-style: italic;
+  color: #000000;
+}
+.alarma2 {
+  background-color: #c12929;
+  font-weight: bolder;
+  font-size: 1.2em;
+  font-style: italic;
+  color: #ffffff;
+}
+/* FIN Estilos para mostrar ALARMAS según stock en id="stock" @ resumen */
+
+/* Estilos para los FLASHMESSAGES: */
+.flashError {
+	color: #ffffff;
+	background: #e13340;
+	font-size: 125%;
+	font-weight: 600;
+	text-align: center;
+}
+.flashSuccess {
+	color: #07194a;
+	background: #92fd9a;
+	margin: 0 auto;
+	font-size: 125%;
+	font-weight: 600;
+	text-align: center;
+}
+
+.tipoExito, .cantidadExito {
+	color: #ff0000;
+}
+.tipoError, .cantidadError {
+	color: #8485cc;
+}
+.cantidad{
+	font-size: 135%;
+}
+.productoExito, .productoError {
+	font-style: italic;
+	font-weight: 700;
+	text-decoration: underline;
+}
+.a1 {
+	background: #f5f53a;
+	color: #ff0000;
+}
+.a2 {
+	background: #f99da5;
+	color: #160b73;
+}
+/* FIN Estilos para los FLASHMESSAGES */

@@ -1,0 +1,32 @@
+{
+	"idprod":
+		{"nombreMostrar":"Id", "mostrarPantalla":false, "posicion":1},
+	"entidad":
+		{"nombreMostrar":"Entidad", "mostrarPantalla":false, "posicion":4},
+	"bin":
+		{"nombreMostrar":"BIN", "mostrarPantalla":true, "posicion":2},
+	"codigo_emsa":
+		{"nombreMostrar":"Cód. EMSA", "mostrarPantalla":true, "posicion":3},
+	"codigo_origen":
+		{"nombreMostrar":"Cód. Origen", "mostrarPantalla":false, "posicion":5},
+	"nombre_plastico":
+		{"nombreMostrar":"Nombre", "mostrarPantalla":true, "posicion":7},
+	"snapshot":
+		{"nombreMostrar":"Foto", "mostrarPantalla":true, "posicion":8},
+	"fechaCreacion":
+		{"nombreMostrar":"Fecha Creación", "mostrarPantalla":true, "posicion":6},
+	"stock":
+		{"nombreMostrar":"Stock", "mostrarPantalla":false, "posicion":9},
+	"alarma1":
+		{"nombreMostrar":"Alarma 1", "mostrarPantalla":false, "posicion":10},
+	"alarma2":
+		{"nombreMostrar":" Alarma 2", "mostrarPantalla":false, "posicion":11},
+	"estado":
+		{"nombreMostrar":"Estado", "mostrarPantalla":false, "posicion":12},
+	"comentarios":
+		{"nombreMostrar":"Comentarios", "mostrarPantalla":false, "posicion":13},
+	"ultimoMovimiento":
+		{"nombreMostrar":"Último Movimiento", "mostrarPantalla":false, "posicion":14},
+	"contacto":
+		{"nombreMostrar":"Contacto", "mostrarPantalla":false, "posicion":15}
+	}
