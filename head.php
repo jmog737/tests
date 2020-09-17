@@ -14,14 +14,14 @@
   <link href='images/card31v1.png' rel='shortcut icon' type='image/png'>
   <link href='images/card31v1.png' rel='icon' type='image/png'>
 	
-	<form style='display: none'>
+<!-- 	<form style='display: none'>
 		<input id="tamPagina" name="tamPagina" type="text" value="<?php echo $_SESSION["tamPagina"] ?>" style="color: black; display: none">
 		<input id="limiteSeleccion" name="limiteSeleccion" type="text" value="<?php echo $limiteSeleccion ?>" style="color: black; display: none">
 		<input id="limiteSelects" name="limiteSelects" type="text" value="<?php echo $_SESSION["limiteSelects"] ?>" style="color: black; display: none">
 		<input id="limiteHistorialProducto" name="limiteHistorialProducto" type="text" value="<?php echo $_SESSION["limiteHistorialProducto"] ?>" style="color: black; display: none">
 		<input id="limiteHistorialGeneral" name="limiteHistorialGeneral" type="text" value="<?php echo $_SESSION["limiteHistorialGeneral"] ?>" style="color: black; display: none">
 		<input id="duracionSesion" name="duracionSesion" type="text" value="<?php echo DURACION?>" style="color: black; display: none">
-	</form>
+	</form> -->
 	
   <title><?= $title ?></title>
 	

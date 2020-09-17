@@ -16,6 +16,7 @@ header {
 	background: #05038c;*/
 	background: #112d4e;
 	padding: 0;
+	min-height: 20%;
 }
 #header-div {
 	margin: 0;
@@ -74,6 +75,8 @@ nav {
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
 	background: #ff0022;
 	background: #289c57;
+	background: #0A5D04;
+	color: #ffffff;
 	font-weight: 600;
 	font-size: 1.1rem;
 }
@@ -152,6 +155,7 @@ tr:last-of-type {
 	color: #112d4e;
 	text-align: center;
 	font-weight: 650;
+	background: #FFFFFF;
 }
 .cal tr:last-child>th:last-child{
 	border-top-right-radius: 20px;
@@ -214,12 +218,22 @@ form {
 form div {
 	margin-top: 2%;
 }
-
+form.editar, form.agregar{
+	max-width: 50%;
+}
 label {
 	font-weight: 600;
 	font-variant-caps: all-small-caps;
 	font-size: 120%;
 	padding-right: 1%;
+}
+.captionContainer {
+	margin: 0 auto;
+	max-width: 50%;
+	text-align: center;
+	font-size: 120%;
+	color: #112d4e;
+	font-weight: 600;
 }
 
 input[type="text"]:blur, input[type="number"]:blur, textarea:blur {
@@ -499,36 +513,50 @@ input:read-only {
 #modalCbioFecha .modal-header {
 	background-color: #1270e0;
 	background: #ff1f53;
-  font-weight: bolder;
+  font-weight: 700;
   color: #fff;
-  font-size: 16px;
-  text-align: center;
+  font-size: 120%;
+	text-align: center;
+	padding: 2%;
 }
 #modalCbioFecha .modal-body {
 	background-color: #5c8260;
 	background: #8a9ab7;
   color: #000;
-  font-size: 1.16em;
+	font-size: 1.16em;
+	text-align: center;
+	padding: 2%;
 }
-#modalCbioFecha .modal-body table {
-  margin: auto;
-  padding: 10px;
+#modalCbioFecha .modal-body form {
+	margin: 2% auto;
+	text-align: right;
+	max-width: 60%;
 }
-#modalCbioFecha .modal-body table td, th{
-  padding-right: 10px;
-  padding-right: 10px;
+#modalCbioFecha input  {
+	width: 50%;
+	text-align: center;
+}
+#modalCbioFecha span {
+	font-style: italic;
+	font-weight: 500;
 }
 #modalCbioFecha .modal-footer {
   background-color: #d2d2d2;
   color: #000;
   font-size: 14px;
-  text-align: center;
+	text-align: center;
+	padding: 2%;
+	display: inline-block;
+	width: 100%;
+	margin: 0 auto;
 }
 #mdlFechaActual {
-  background-color: #eeff88;  
+	background-color: #eeff88; 
+	font-size: 95%; 
 }
 #mdlFechaNueva {
-  background-color: #ffb8d7;  
+	background-color: #ffb8d7;  
+	font-size: 95%; 
 }
 
 /**************************** FIN MODAL **************************************/

@@ -24,7 +24,7 @@ if ($result !== FALSE) {
     $result1 = $pdo->query($queryUpdate);
     if ($result1 !== FALSE) {
       if ($log === "SI") {
-        escribirLog($queryUpdate);
+        //escribirLog($queryUpdate);
       }
       $dato["resultado"] = "OK";
     }  

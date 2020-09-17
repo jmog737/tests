@@ -1,3 +1,4 @@
+<?php require_once('modals.php'); ?>
 <!--<footer class="fixed-bottom">-->
 <footer>
 <!--

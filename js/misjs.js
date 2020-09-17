@@ -458,6 +458,61 @@ function validarEditar(agregarCbioFecha) {
 /********** fin validarEditar(agregarCbioFecha) **********/
 
 /**
+ * \brief Función que primero valida la info ingresada, y de ser válida, hace la actualización del pwd del usuario del sistema.
+ */
+function actualizarUser() {
+	console.log("INICIO actualizarUser()");
+	var pw1 = $("#pw1").val();
+	var pw2 = $("#pw2").val();
+
+	if (pw1 === ''){
+		console.log("Falla validación: pw1 vacío.");
+		alert('La contraseña 1 NO puede estar vacía.\nPor favor verifique.');
+		$("#pw1").focus();
+	}
+	else {
+		if (pw2 === ''){
+			console.log("Falla validación: pw2 vacío.");
+			alert('La contraseña 2 NO puede estar vacía.\nPor favor verifique.');
+			$("#pw2").focus();
+		}
+		else {
+			if (pw1 !== pw2) {
+				console.log("Falla validación: passwords distintos.");
+				alert('Las contraseñas ingresadas NO son iguales.\nPor favor verifique.');
+				$("#pw1").val('');
+				$("#pw2").val('');
+				$("#pw1").focus();
+			}
+			else {
+				alert('hay que actualizar a: '+$("#usuarioSesion").val()+'\nID: '+$("#userID").val());
+				/******** COMENTO PARTE DEL USUARIO POR AHORA **********************/
+				///var user = $("#nombreUser").val();
+				var iduser = $("#userID").val();
+				var url = "data/updateQuery.php";
+				var query = 'update appusers set password=sha1("'+pw1+'") ';
+				query += 'where id_usuario='+iduser;
+				var log = "NO";
+				var jsonQuery = JSON.stringify(query);
+				$.getJSON(url, {query: ""+jsonQuery+"", log: log}).done(function(request) {
+					var resultado = request["resultado"];
+					if (resultado === "OK") {
+						console.log("La contraseña se cambió con éxito.");
+						alert('Los datos se modificaron correctamente!.');
+						$("#modalPwd").modal("hide");
+					}
+					else {
+						console.log("Falla validación: error al ejecutar consulta.");
+						alert('Hubo un problema en la actualización. Por favor verifique.');
+					}					
+				});
+			}
+		}
+	}
+}
+/********** fin actualizarUser() **********/
+
+/**
 \brief Función que se ejecuta al cargar la página.
 En la misma se ve primero desde que página se llamó, y en base a eso
 se llama a la función correspondiente para cargar lo que corresponda (actividades, referencias, etc.)
@@ -747,6 +802,144 @@ function todo () {
 
 /*****************************************************************************************************************************
 /// ********************************************** FIN MODAL CAMBIO FECHA ****************************************************
+*****************************************************************************************************************************/
+
+/*****************************************************************************************************************************
+/// **************************************************** INICIO MODAL USARIO *************************************************
+*****************************************************************************************************************************/
+
+///Disparar función al hacer click en el link con el nombre del usuario que está logueado.
+///Esto hace que se abra el modal para cambiar la contraseña.
+$(document).on("click", "#user", function(){
+  $("#modalPwd").modal("show");
+});
+/********** fin on("click", "#user", function() **********/
+
+///Disparar función al abrirse el modal para cambiar la contraseña.
+///Lo único que hace es limpiar el form para poder ingresar los nuevos datos.
+$(document).on("shown.bs.modal", "#modalPwd", function() {
+  $("#pw1").val('');
+  $("#pw2").val('');
+  $("#pw1").attr("autofocus", true);
+  $("#pw1").focus();
+});
+/********** fin on("shown.bs.modal", "#modalPwd", function() **********/
+
+///Disparar función al hacer click en el botón de ACTUALIZAR que está en el MODAL.
+///Primero valida que la info ingresada sea válida (pwd no nulos e iguales entre sí), y luego 
+///ejecuta la consulta para cambiar la contraseña.
+$(document).on("click", "#btnModal", function(){
+  actualizarUser();
+});
+/********** fin on("click", "#btnModal", function() **********/
+
+///Disparar función al hacer ENTER estando en el elemento pw1 del MODAL.
+///Esto hace que se pase el foco al siguiente input del MODAL (pw2) cosa de ahorrar tiempo.
+$(document).on("keypress", "#pw1", function(e) {
+  if(e.which === 13) {
+    $("#pw2").focus();
+  }  
+});
+/********** fin on("keypress", "#pw1", function(e) **********/
+
+///Disparar función al hacer ENTER estando en el elemento pw2 del MODAL.
+///Esto hace que se llame a la función correspondiente (actualizarUser()) cosa de ahorrar tiempo.
+$(document).on("keypress", "#pw2", function(e) {
+  if(e.which === 13) {
+    actualizarUser();
+  }  
+});
+/********** fin on("keypress", "#pw2", function(e) **********/
+
+/*****************************************************************************************************************************
+/// **************************************************** FIN MODAL USARIO ****************************************************
+*****************************************************************************************************************************/
+
+
+
+/*****************************************************************************************************************************
+/// **************************************************** INICIO MODAL PARÁMETROS *********************************************
+*****************************************************************************************************************************/
+
+///Disparar función al hacer click en el link que dice PARAMETROS debajo del usuario logueado
+///Esto hace que se abra el modal para cambiar los parámetros.
+$(document).on("click", "#param", function(){
+  verificarSesion('', 's');
+  $("#modalParametros").modal("show");
+});
+/********** fin on("click", "#param", function() **********/
+
+///Disparar función al abrirse el modal para cambiar los parámetros.
+///Lo único que hace es limpiar el form para poder ingresar los nuevos datos.
+$(document).on("shown.bs.modal", "#modalParametros", function() {
+  $("#pageSize").val($("#tamPagina").val());
+  $("#tamSelects").val($("#limiteSelects").val());
+  $("#tamHistorialGeneral").val($("#limiteHistorialGeneral").val());
+  $("#tamHistorialProducto").val($("#limiteHistorialProducto").val());
+  $("#pageSize").attr("autofocus", true);
+  $("#pageSize").focus();
+});
+/********** fin on("shown.bs.modal", "#modalParametros", function() **********/
+
+///Disparar función al hacer click en el botón de ACTUALIZAR que está en el MODAL.
+///Llama a la función que se encarga de actualizar los parámetros.
+$(document).on("click", "#btnParam", function(){
+  actualizarParametros();
+});
+/********** fin on("click", "#btnParam", function() **********/
+
+///Disparar función al hacer ENTER estando en el elemento pageSize del MODAL.
+///Esto hace que se pase el foco al siguiente input del MODAL (tamSelects) cosa de ahorrar tiempo.
+$(document).on("keypress", "#pageSize", function(e) {
+  if(e.which === 13) {
+    $("#tamSelects").focus();
+  }  
+});
+/********** fin on("keypress", "#pageSize", function(e) **********/
+
+///Disparar función al hacer ENTER estando en el elemento tamSelects del MODAL.
+///Esto hace que se pase el foco al siguiente input del MODAL (tamHistorialGeneral) cosa de ahorrar tiempo.
+$(document).on("keypress", "#tamSelects", function(e) {
+  if(e.which === 13) {
+    $("#tamHistorialGeneral").focus();
+  }  
+});
+/********** fin on("keypress", "#tamSelects", function(e) **********/
+
+///Disparar función al hacer ENTER estando en el elemento tamHistorialGeneral del MODAL.
+///Esto hace que se pase el foco al siguiente input del MODAL (tamHistorialProducto) cosa de ahorrar tiempo.
+$(document).on("keypress", "#tamHistorialGeneral", function(e) {
+  if(e.which === 13) {
+    $("#tamHistorialProducto").focus();
+  }  
+});
+/********** fin on("keypress", "#tamHistorialGeneral", function(e) **********/
+
+///Disparar función al hacer ENTER estando en el elemento tamHistorialProducto del MODAL.
+///Esto hace que se llame a la función correspondiente (actualizarParametros()) cosa de ahorrar tiempo.
+$(document).on("keypress", "#tamHistorialProducto", function(e) {
+  if(e.which === 13) {
+    actualizarParametros();
+  }  
+});
+/********** fin on("keypress", "#tamHistorialProducto", function(e) **********/
+
+///Disparar función al hacer CLICK a uno de los links del POPOVER con el HISTORIALGRAL.
+///Esto hace que se cierre el popover.
+$(document).on("click", ".linkHistorialGeneral", function(){
+  $("#historialGeneral").popover('hide');
+});
+/********** fin on("click", ".linkHistorialGeneral", function() **********/
+
+///Disparar función al hacer CLICK a uno de los links del POPOVER con el HISTORIAL PRODUCTO.
+///Esto hace que se cierre el popover.
+$(document).on("click", ".linkHistorialProducto", function(){
+  $("#historial").popover('hide');
+});
+/********** fin on("click", ".linkHistorialGeneral", function() **********/
+
+/*****************************************************************************************************************************
+/// **************************************************** FIN MODAL PARÁMETROS ************************************************
 *****************************************************************************************************************************/
 
 }

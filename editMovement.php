@@ -29,6 +29,7 @@ if (isset($_POST['fecha']) && isset($_POST['estado']) && isset($_POST['tipo'])) 
   $fecha = $_POST['fecha'];
   $estado = $_POST["estado"];
   $tipo = $_POST["tipo"];
+  $cantidad = $_POST['cant'];
   $comentarios = $_POST["comentarios"];
 
   $msgError = '';
@@ -154,9 +155,7 @@ require_once('head.php');
 
 <body>
   <?php
-  //$editMovement = "active";
   require_once('header.php');
-  require_once('modals.php');
   ?>
   <main>
     <div class="container">
@@ -165,7 +164,7 @@ require_once('head.php');
 
       <?php flashMessages(); ?>
       
-      <form method="post" name="frmEditMovement" id="frmEditMovement" action="editMovement.php">
+      <form method="post" name="frmEditMovement" id="frmEditMovement" class="editar" action="editMovement.php">
         <label for="fecha">Fecha:</label>
         <input type="date" name="fecha" id="fecha" min="2017-09-01" value="<?= $fecha ?>" title="Fecha del movimiento"><br>
 
@@ -179,13 +178,13 @@ require_once('head.php');
         </select><br>
 
         <label for="entidad">Entidad:</label>
-        <input type="text" name="entidad" id="entidad" readonly tabindex="-2" value="<?= $entidad ?>" title="Entidad" placeholder="Entidad"><br>
+        <input type="text" name="entidad" id="entidad" readonly tabindex="-2" value="<?= $entidad ?>" title="Entidad. NO se puede cambiar." placeholder="Entidad"><br>
 
         <label for="producto">Producto:</label>
-        <input type="text" name="producto" id="producto" readonly tabindex="-3" value="<?= $nombre ?>" title="Producto" placeholder="Producto"><br>
+        <input type="text" name="producto" id="producto" readonly tabindex="-3" value="<?= $nombre ?>" title="Producto. NO se puede cambiar." placeholder="Producto"><br>
 
         <label for="codigo">C&oacute;digo:</label>
-        <input type="text" name="codigo" id="codigo" readonly tabindex="-4" value="<?= $codEmsa ?>" title="Código" placeholder="C&oacute;digo"><br>
+        <input type="text" name="codigo" id="codigo" readonly tabindex="-4" value="<?= $codEmsa ?>" title="Código. NO se puede cambiar." placeholder="C&oacute;digo"><br>
 
         <label for="tipo">Tipo:</label>
         <select id="tipo" name="tipo" title="Tipo de movimiento">
@@ -198,23 +197,26 @@ require_once('head.php');
         </select><br>
 
         <label for="cantidad">Cantidad:</label>
-        <input type="number" min=1 name="cantidad" id="cantidad" readonly tabindex="-5" value="<?= $cantidad ?>" title="Cantidad de tarjetas a mover" placeholder="Cantidad"><br>
+        <input type="number" min=1 name="cantidad" id="cantidad" readonly tabindex="-5" value="<?= $cantidad ?>" title="Cantidad de tarjetas a mover. NO se puede cambiar." placeholder="Cantidad"><br>
 
         <label for="comentarios">Comentarios:</label><br>
         <textarea name="comentarios" id="comentarios" rows="4" cols="40" title="Comentarios" placeholder="Comentarios"><?= $comentarios ?></textarea><br>
 
         <div class="text-center" id="btnContainer">
-          <input type="submit" onclick="return validarEditar(false)" name="btnEdit" class="btn btn-success text-center" value="Editar" title="Editar el movimiento" />
+          <input type="submit" onclick="return validarEditar(false)" name="btnEdit" class="btn btn-primary text-center" value="Editar" title="Editar el movimiento" />
           <input type="submit" name="btnCancelar" value="Cancelar" class="btn btn-danger text-center" title="Cancelar la edici&oacute;n del movimiento" />
         </div>
         
         <input type="hidden" id="idprod" name="idprod" value="<?= $_REQUEST['idprod'] ?>">
         <input type="hidden" id="fechaVieja" name="fechaVieja" value="<?= $fecha ?>">
-        <!-- Agrego entidad y nombre para evitar hacer una consulta extra: -->
+        <!-- Agrego entidad, cantidad y nombre para evitar hacer una consulta extra: -->
         <input type="hidden" id='ent' name="ent" value="<?= $entidad ?>">
         <input type="hidden" id="nom" name="nom" value="<?= $nombre ?>">
+        <input type="hidden" id="cant" name="cant" value="<?= $cantidad ?>">
       </form>
-
+      <div class="captionContainer">
+			  <span>Formulario para editar el movimiento</span>
+		  </div> 
     </div>
   </main>
 

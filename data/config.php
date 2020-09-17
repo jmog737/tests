@@ -30,7 +30,7 @@ $ip = '';
 //}
 //echo "host: ".$hostname."<br>ip: ".$ip;
 
-$unidad = "D:";
+$unidad = "C:";
 
 if ($ip === ''){
   $dir = $unidad."/Reportes/";

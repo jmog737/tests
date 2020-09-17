@@ -3,21 +3,19 @@
 	<div class="container-fluid" id="header-div">
 		<div class="row" id="contenedor">
 			<div id="logo" class="col-2">
-				<a href='index.php' title="Ir al Inicio">
+				<!-- <a href='index.php' title="Ir al Inicio"> -->
 					<img src="images/logo-emsa.png" alt="Company Logo">
-				</a>
+				<!-- </a> -->
 			</div>
 			<div id="titulo" class="col">
-				<a href='index.php' title="Ir al Inicio"><h1>STOCK MANAGEMENT</h1></a>
+				<!-- <a href='index.php' title="Ir al Inicio"><h1>STOCK MANAGEMENT</h1></a> -->
+				<h1>STOCK MANAGEMENT</h1>
 			</div>
-		</div>
-		
-		
+		</div>		
  </div>
 </header>	
 
 <?php
-	//require_once 'data/config.php';
 	if (isset($_SESSION['user_id'])) 
 		{
 ?>

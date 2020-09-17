@@ -134,7 +134,7 @@ require_once ('head.php');
 
     <?php flashMessages(); ?>
 
-    <form method="post" action="addMovement.php" onload="ocultarResumen()">
+    <form method="post" action="addMovement.php" class="agregar" onload="ocultarResumen()">
 			
       <label for="fecha">Fecha:</label>
       <input type="date" name="fecha" id="fecha" min="2017-09-01" value="<?= date('Y-m-d') ?>" title="Ingresar la fecha del movimiento"><br>
@@ -165,7 +165,11 @@ require_once ('head.php');
 				<input type="submit" id="agregarMovimiento" name="agregarMovimiento" class="btn btn-success text-center" onclick="return validarAgregar()" value="Agregar" title="Agregar el movimiento"/>
 				<input type="submit" name="cancel" value="Cancelar" class="btn btn-danger text-center" title="Cancelar el agregado del movimiento"/>
 			</div>
-    </form>  
+		
+		</form> 
+		<div class="captionContainer">
+		<span>Formulario para agregar un movimiento</span>
+		</div> 
   </div>
 	</main>	
 	<?php
