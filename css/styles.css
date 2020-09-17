@@ -214,6 +214,7 @@ form {
 form div {
 	margin-top: 2%;
 }
+
 label {
 	font-weight: 600;
 	font-variant-caps: all-small-caps;
@@ -221,18 +222,6 @@ label {
 	padding-right: 1%;
 }
 
-/*.agrandar:blur {
-	font-size: inherit;
-  background-color: #ffffff;
-  font-weight: inherit;
-  color: inherit;
-}*/
-/*.agrandar:focus {
-	transform: scaleY(1.4);
-  background-color: #e7f128;
-  font-weight: bolder;
-  color: #ff0000;
-}*/
 input[type="text"]:blur, input[type="number"]:blur, textarea:blur {
 	font-size: inherit;
   background-color: #ffffff;
@@ -244,6 +233,11 @@ input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
   background-color: #e7f128;
   font-weight: bolder;
   color: #ff0000;
+}
+input:read-only {
+	background-color:#eef581;
+	font-weight: 600;
+	max-width: 70%;
 }
 /* FIN Estilos ELEMENTOS */
 
@@ -418,7 +412,7 @@ input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
 	text-align: center;
 }
 
-.tipoExito, .cantidadExito {
+.tipoExito, .cantidadExito, .estadoOK, .estadoError {
 	color: #ff0000;
 }
 .tipoError, .cantidadError {
@@ -441,3 +435,100 @@ input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
 	color: #160b73;
 }
 /* FIN Estilos para los FLASHMESSAGES */
+
+/******************************** MODAL **************************************/
+.tituloModal {
+  background-color: #023184;
+}
+.tblModal {
+  color: #000;
+}
+
+#modalExportar .modal-header {
+  background-color: #e44040;
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+}
+#modalExportar .modal-body {
+  background-color: #d2d2d2;
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+}
+#modalExportar .modal-footer {
+  background-color: #d2d2d2;
+  color: #000;
+  font-size: 14px;
+  text-align: center;
+}
+
+#modalMovRepetido .modal-header {
+  background-color: #e44040;
+  background-color: #e00800;
+  font-weight: bolder;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+#modalMovRepetido .modal-body {
+  background-color: #d2d2d2;
+  background-color: #5c8260;
+  color: #000;
+  font-size: 16px;
+}
+#modalMovRepetido .modal-footer {
+  background-color: #d2d2d2;
+  color: #000;
+  font-size: 14px;
+  text-align: center;
+}
+#btnModalRepetido {
+  /*background-color:#ffff33;*/
+  font-weight: bold;
+}
+#btnModalRepetido:focus, #btnModalRepCerrar:focus{
+  border-width: 3px;
+  border-color: white;
+  background-color:#9e41d0;
+}
+#modalMovRepetido input[type="text"]:disabled {
+  background-color: #e8efb0;
+}
+
+#modalCbioFecha .modal-header {
+	background-color: #1270e0;
+	background: #ff1f53;
+  font-weight: bolder;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+#modalCbioFecha .modal-body {
+	background-color: #5c8260;
+	background: #8a9ab7;
+  color: #000;
+  font-size: 1.16em;
+}
+#modalCbioFecha .modal-body table {
+  margin: auto;
+  padding: 10px;
+}
+#modalCbioFecha .modal-body table td, th{
+  padding-right: 10px;
+  padding-right: 10px;
+}
+#modalCbioFecha .modal-footer {
+  background-color: #d2d2d2;
+  color: #000;
+  font-size: 14px;
+  text-align: center;
+}
+#mdlFechaActual {
+  background-color: #eeff88;  
+}
+#mdlFechaNueva {
+  background-color: #ffb8d7;  
+}
+
+/**************************** FIN MODAL **************************************/

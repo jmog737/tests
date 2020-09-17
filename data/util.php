@@ -26,32 +26,14 @@ function validarCamposAgregar() {
 	}	 
 }
 
-/*function validarMovimiento(){
-	//recupero parámetros:
-	$stock = (int)$_POST["stock"];
-	$cantidad = (int)$_POST["cantidad"];
-	
-	/// Si el movimiento NO es una devolución, calculo el nuevo stock. 
-  /// De serlo, NO se quita de stock pues las tarjetas se reponen (igualmente, por ahora no existe el tipo "Devolución"):
-	if (($tipo !== 'Ingreso') && ($tipo !== 'AJUSTE Ingreso')){
-		$stock -= $cantidad;
-	}
-	if (($tipo === 'Ingreso') || ($tipo === 'AJUSTE Ingreso')) {
-		$stock += $cantidad;
-	}
-
-	///VER MOVIMIENTO REPETIDO
-	
-	if ($stock <0) {
-		return "No hay stock suficiente para realizar el movimiento.";
-	}
+function validarCamposEditar(){
+	if ( (strlen($_POST['fecha']) < 1) || (strlen($_POST['tipo']) < 1) || (strlen($_POST['estado']) < 1) ) {
+    return "Salvo comentarios, se requieren todos los campos.";
+  }
 	else {
-		return true;
-	}
-	
-	
-	
-}*/
+		return true; 
+	}	 
+}
 
 function sort_by_pos ($a, $b) {
 		return $a['pos'] - $b['pos'];

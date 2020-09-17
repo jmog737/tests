@@ -2,7 +2,7 @@
   \brief Función que valida que el parámetro pasado sea un entero.
   @param numero Dato a validar.                  
 */
-function validarEntero(numero) {//alert(valor);
+function validarEntero(numero) {
 	console.log("INICIO validarEntero");
   if (isNaN(numero)){
     //alert ("Ups... " + numero + " no es un número.");
@@ -62,7 +62,7 @@ function formatearFecha(fecha, destino){
 	}
 	var splitted = fecha.split(separador);
 	var fechaFormateada = splitted[2]+nuevoSeparador+splitted[1]+nuevoSeparador+splitted[0];
-	console.log("Fecha ingresada: "+fecha+"\nFecha formateada: "+fechaFormateada);
+	//console.log("formatearFecha:\nIngresada: "+fecha+" - Formateada: "+fechaFormateada+"\nFIN formatearFecha");
 	return fechaFormateada;
 }
 /********** fin ocultarResumen() **********/
@@ -302,7 +302,7 @@ function mostrarHistorial(prod){
 /********** fin mostrarHistorial(prod) **********/
 
 /**
-* \brief Función que realiza la validación del from para AGREGAR MOVIMIENTO.
+* \brief Función que realiza la validación del form para AGREGAR MOVIMIENTO.
 */
 function validarAgregar() {
 	console.log("INICIO validarAgregar");
@@ -394,6 +394,68 @@ function validarAgregar() {
   else return false;
 }
 /********** fin validarAgregar() **********/
+
+/**
+* \brief Función que realiza la validación del form para EDITAR MOVIMIENTO.
+* @param {Boolean} agregarCbioFecha Booleano que indica si se puede hacer o no el cambio de fecha.
+*/
+function validarEditar(agregarCbioFecha) {
+	console.log("INICIO validarEditar");
+	var seguir = false;
+	var id = $("#idprod").val();
+	var fecha = $("#fecha").val();
+	var fechaVieja = $("#fechaVieja").val();
+  var hoy = new Date();
+  var diaHoy = hoy.getDate();
+  var mesHoy = hoy.getMonth()+1;
+  if (diaHoy < 10) 
+    {
+    diaHoy = '0'+diaHoy;
+  }                     
+  if (mesHoy < 10) 
+    {
+    mesHoy = '0'+mesHoy;
+  }
+	var hoyFecha = hoy.getFullYear()+'-'+mesHoy+'-'+diaHoy;
+	var hoyFormateada = formatearFecha(hoyFecha, "screen");
+	var fechaConFormato = formatearFecha(fecha, "screen");
+      
+  if (fecha === ''){
+		console.log("Falla validación: fecha NO ingresada");
+		alert('Por favor ingrese la fecha del movimiento.');
+    $("#fecha").focus();
+    seguir = false;
+  }
+  else {
+    if (fecha > hoyFecha){
+			console.log("Falla validación: Fecha futura: "+fechaConFormato+" posterior a "+hoyFormateada);
+			alert('La fecha seleccionada ('+fechaConFormato+') es posterior al día de hoy ('+hoyFormateada+'). \n¡Por favor verifique!.');
+			$("#fecha").val(hoyFecha);
+      $("#fecha").focus();
+      seguir = false;
+    }
+    else {
+			if (fecha !== fechaVieja){
+        if (!agregarCbioFecha){
+          $("#modalCbioFecha").modal("show");
+          seguir = false;
+				}
+				else {
+					console.log("ID: "+$("input[name=id]").val()+"\nFecha OK ("+fecha+")\n Estado: "+estado+"\nTipo: "+tipo+"\nComentarios:"+comentarios+"\nValidación OK.\nFIN validarEditar()");
+					seguir = true;
+				}// else agregarCbioFecha  
+			}
+			else {
+				console.log("ID: "+$("input[name=id]").val()+"\nFecha NO cambió ("+formatearFecha(fecha, 'screen')+")\nEstado: "+$("#estado").val()+"\nTipo: "+$("#tipo").val()+"\nComentarios:"+$("#comentarios").val()+"\nValidación OK.\nFIN validarEditar()");
+				seguir = true;
+			}	// else fecha!==fechaVieja	
+    }// else fecha menor a hoy
+  }// else fecha no seleccionada
+	//seguir = false;
+  if (seguir) return true;
+  else return false;
+}
+/********** fin validarEditar(agregarCbioFecha) **********/
 
 /**
 \brief Función que se ejecuta al cargar la página.
@@ -635,16 +697,62 @@ function todo () {
 	});
 	/********** fin on("click", ".linkHistorialGeneral", function() **********/
 	
+	///Disparar función al hacer CLICK en cualquier parte de la fila con el movimiento.
+	///Esto hace que sea donde sea, se vaya a su edición.
 	$(document).on("click", "tr", function() { 
 		if($(this).attr('href') !== undefined){ 
 			document.location = $(this).attr('href'); 
 		}
 	});
 
+/*****************************************************************************************************************************
+/// ********************************************* INICIO MODAL CAMBIO FECHA **************************************************
+*****************************************************************************************************************************/
+	
+	///Disparar función al abrirse el modal con la alerta de movimiento repetido.
+	$(document).on("shown.bs.modal", "#modalCbioFecha", function() {
+		var fechaActualModal = $("#fecha").val();
+		var fechaViejaModal = $("#fechaVieja").val();
+
+		console.log("MODAL Cbio. Fecha:\nOriginal: "+fechaViejaModal+"\nNueva: "+fechaActualModal);
+
+		var separoFechaModal = fechaActualModal.split('-');
+		fechaActualModal = separoFechaModal[2]+'/'+separoFechaModal[1]+'/'+separoFechaModal[0];
+		
+		var separoFechaViejaModal = fechaViejaModal.split('-');
+		fechaViejaModal = separoFechaViejaModal[2]+'/'+separoFechaViejaModal[1]+'/'+separoFechaViejaModal[0];
+		
+		$("#mdlFechaActual").val(fechaViejaModal);
+		$("#mdlFechaNueva").val(fechaActualModal);
+
+		$("#btnModalCbioFechaCerrar").attr("autofocus", true);
+		setTimeout(function (){$("#btnModalCbioFechaCerrar").focus();}, 50);
+	});
+	/********** fin on("shown.bs.modal", "#modalMovRepetido", function() **********/
+
+	///Disparar función al hacer click en el botón de AGREGAR que está en el MODAL.
+	$(document).on("click", "#btnModalCbioFecha", function(){
+		$("form[name='frmEditMovement']").submit();
+	});
+	/************** fin on("click", "#btnModalRepetido", function() ***************/
+
+	///Disparar función al cerrarse el modal con la alerta de movimiento repetido. Ya sea desde el botón cerrar como con "la cruz" para 
+	///cerrar de arriba a la derecha.
+	$(document).on("hide.bs.modal", "#modalCbioFecha", function() {
+		var fechaViejaModal = $("#fechaVieja").val();  
+		$("#fecha").val(fechaViejaModal);
+		setTimeout(function (){$("#fecha").focus();}, 50);
+	});
+	/********** fin on("shown.bs.modal", "#modalMovRepetido", function() **********/
+
+/*****************************************************************************************************************************
+/// ********************************************** FIN MODAL CAMBIO FECHA ****************************************************
+*****************************************************************************************************************************/
+
 }
 
 /**
- * \brief Función que envuelve todos los eventos JQUERY con sus respectivos handlers.
- */
+* \brief Función que envuelve todos los eventos JQUERY con sus respectivos handlers.
+*/
 $(document).on("ready", todo());
 /********** fin on("ready", todo()) **********/

@@ -24,7 +24,15 @@ if (isset($_POST['cancel'])) {
 
 //Input data validation and SQL insert if everything is OK
 if (isset($_POST['fecha']) && isset($_POST['hint']) && isset($_POST['tipo']) && isset($_POST['cantidad']) && isset($_POST['stock']) && isset($_POST['al1']) && isset($_POST['al2'])) {
-  
+	
+	//Valido el movimiento
+  $mensaje = validarCamposAgregar();
+  if (is_string($mensaje)) {
+    $_SESSION['error'] = $mensaje;
+    header("Location: addMovement.php");
+    return; 
+	}
+	
 	$fecha = $_POST['fecha'];
 	$idprod = (int)$_POST["hint"];
 	$cantidad = (int)$_POST["cantidad"];
@@ -108,7 +116,7 @@ if (isset($_POST['fecha']) && isset($_POST['hint']) && isset($_POST['tipo']) && 
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="esp">
 
 <?php
 $title = "AGREGAR MOVIMIENTO - STOCK";

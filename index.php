@@ -3,12 +3,7 @@ session_start();
 require_once "data/pdo.php";
 require_once "data/util.php";
 
-/*if(!isset($_SESSION)) 
-  { 
-  session_start(); 
-}*/ 
-
-$consultarUltimos = "SELECT productos.nombre_plastico, productos.entidad, productos.bin, productos.snapshot, productos.codigo_emsa, productos.codigo_origen, movimientos.idmov, movimientos.tipo, movimientos.cantidad, movimientos.fecha, movimientos.hora, movimientos.estado, movimientos.comentarios FROM movimientos inner join productos on productos.idprod=movimientos.producto where movimientos.estado='OK' order by fecha desc limit 10";
+$consultarUltimos = "SELECT productos.nombre_plastico, productos.entidad, productos.bin, productos.snapshot, productos.codigo_emsa, productos.codigo_origen, movimientos.idmov, movimientos.tipo, movimientos.cantidad, movimientos.fecha, movimientos.hora, movimientos.estado, movimientos.comentarios FROM movimientos inner join productos on productos.idprod=movimientos.producto where movimientos.estado='OK' order by fecha desc, hora desc limit 10";
 $mostrarUltimos = array(array ("pos" => 4, "tabla" => "productos", "campo" => "nombre_plastico", "align" => "left", "mostrar" => true),
 												array ("pos" => 3, "tabla" => "productos", "campo" => "entidad", "align" => "left", "mostrar" => true),
 												array ("pos" => 5, "tabla" => "productos", "campo" => "bin", "align" => "center", "mostrar" => false),
@@ -98,7 +93,7 @@ require_once ('head.php');
 							</thead>';
 				echo '<tbody>';	
 				foreach ( $rows as $row ) {
-					echo "<tr href='editMovement.php?id=".$row['idmov']."'>";
+					echo "<tr href='editMovement.php?idprod=".$row['idmov']."'>";
 					foreach ($mostrarUltimos as $i => $campo) {
 						if ($campo["mostrar"] === true){
 							if ($campo["tabla"] === "productos"){
@@ -116,7 +111,7 @@ require_once ('head.php');
 								$row[$campo["campo"]] = $fechaTemp[0].":".$fechaTemp[1];
 							}
 							if ($campo["campo"] === "cantidad"){
-								echo "<td title='Click para EDITAR' style='text-align: ".$campo["align"]."'><a target='_blank' href='editMovement.php?id=".$row['idmov']."'>".number_format($row[$campo["campo"]], 0, ',', '.')."</a></td>";
+								echo "<td title='Click para EDITAR' style='text-align: ".$campo["align"]."'><a target='_blank' href='editMovement.php?idprod=".$row['idmov']."'>".number_format($row[$campo["campo"]], 0, ',', '.')."</a></td>";
 							}
 							else {
 								echo "<td style='text-align: ".$campo["align"]."'>".htmlentities($row[$campo["campo"]])."</td>";
