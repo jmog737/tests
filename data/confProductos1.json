@@ -1,0 +1,378 @@
+{
+  "idprod":
+  {
+    "pantalla": 
+    {
+      "mostrar": false,
+      "nombre": "Id",
+      "index": 1,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": false,
+      "nombre": "Id",
+      "largo": 1,
+      "index": 1,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": false,
+      "nombre": "Id",
+      "index": 1,
+      "estilos": ""
+    }
+  },
+  "entidad":
+  {
+    "pantalla": 
+    {
+      "mostrar": true,
+      "nombre": "Entidad",
+      "index": 2,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": true,
+      "nombre": "Entidad",
+      "largo": 1.5,
+      "index": 2,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": true,
+      "nombre": "Entidad",
+      "index": 2,
+      "estilos": ""
+    }
+  },
+  "nombre_plastico":
+  {
+    "pantalla": 
+    {
+      "mostrar": true,
+      "nombre": "Nombre",
+      "index": 3,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": true,
+      "nombre": "Nombre",
+      "largo": 2,
+      "index": 3,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": true,
+      "nombre": "Nombre",
+      "index": 3,
+      "estilos": ""
+    }
+  },
+  "bin":
+  {
+    "pantalla": 
+    {
+      "mostrar": false,
+      "nombre": "Bin",
+      "index": 4,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": false,
+      "nombre": "Bin",
+      "largo": 1,
+      "index": 4,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": false,
+      "nombre": "Bin",
+      "index": 4,
+      "estilos": ""
+    }
+  },  
+  "codigo_emsa":
+  {
+    "pantalla": 
+    {
+      "mostrar": false,
+      "nombre": "Código EMSA",
+      "index": 5,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": false,
+      "nombre": "Código EMSA",
+      "largo": 1,
+      "index": 5,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": false,
+      "nombre": "Código EMSA",
+      "index": 5,
+      "estilos": ""
+    }
+  },
+  "codigo_origen":
+  {
+    "pantalla": 
+    {
+      "mostrar": false,
+      "nombre": "Código Origen",
+      "index": 6,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": false,
+      "nombre": "Código Origen",
+      "largo": 2,
+      "index": 6,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": false,
+      "nombre": "Código Origen",
+      "index": 6,
+      "estilos": ""
+    }
+  },
+  "estado":
+  {
+    "pantalla": 
+    {
+      "mostrar": true,
+      "nombre": "Estado",
+      "index": 1,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": false,
+      "nombre": "Estado",
+      "largo": 1,
+      "index": 1,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": false,
+      "nombre": "Estado",
+      "index": 1,
+      "estilos": ""
+    }
+  },
+  "snapshot":
+  {
+    "pantalla": 
+    {
+      "mostrar": true,
+      "nombre": "Foto",
+      "index": 7,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": false,
+      "nombre": "Foto",
+      "largo": 1,
+      "index": 7,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": false,
+      "nombre": "Foto",
+      "index": 7,
+      "estilos": ""
+    }
+  },
+  "stock":
+  {
+    "pantalla": 
+    {
+      "mostrar": true,
+      "nombre": "Stock",
+      "index": 8,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": true,
+      "nombre": "Stock",
+      "largo": 1.2,
+      "index": 8,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": true,
+      "nombre": "Stock",
+      "index": 8,
+      "estilos": ""
+    }
+  },
+  "alarma1":
+  {
+    "pantalla": 
+    {
+      "mostrar": false,
+      "nombre": "Alarma 1",
+      "index": 9,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": false,
+      "nombre": "Alarma 1",
+      "largo": 1.2,
+      "index": 9,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": false,
+      "nombre": "Alarma 1",
+      "index": 9,
+      "estilos": ""
+    }
+  },
+  "alarma2":
+  {
+    "pantalla": 
+    {
+      "mostrar": false,
+      "nombre": "Alarma 2",
+      "index": 10,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": false,
+      "nombre": "Alarma 2",
+      "largo": 1.2,
+      "index": 10,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": false,
+      "nombre": "Alarma 2",
+      "index": 10,
+      "estilos": ""
+    }
+  },
+  "ultimoMovimiento":
+  {
+    "pantalla": 
+    {
+      "mostrar": true,
+      "nombre": "Últ. Mov.",
+      "index": 11,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": true,
+      "nombre": "Últ. Mov.",
+      "largo": 2,
+      "index": 11,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": true,
+      "nombre": "Últ. Mov.",
+      "index": 11,
+      "estilos": ""
+    }
+  },
+  "comentarios":
+  {
+    "pantalla": 
+    {
+      "mostrar": true,
+      "nombre": "Comentarios",
+      "index": 12,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": true,
+      "nombre": "Comentarios",
+      "largo": 1,
+      "index": 12,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": true,
+      "nombre": "Comentarios",
+      "index": 12,
+      "estilos": ""
+    }
+  },
+  "fechaCreacion":
+  {
+    "pantalla": 
+    {
+      "mostrar": false,
+      "nombre": "Fecha Creación",
+      "index": 13,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": false,
+      "nombre": "Fecha Creación",
+      "largo": 1.5,
+      "index": 13,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": false,
+      "nombre": "Fecha Creación",
+      "index": 13,
+      "estilos": ""
+    }
+  },  
+  "contacto":
+  {
+    "pantalla": 
+    {
+      "mostrar": false,
+      "nombre": "Contacto",
+      "index": 14,
+      "estilos": "" 
+    },
+    "pdf": 
+    {
+      "mostrar": false,
+      "nombre": "Contacto",
+      "largo": 2,
+      "index": 14,
+      "estilos": ""   
+    },
+    "xls": 
+    {
+      "mostrar": false,
+      "nombre": "Contacto",
+      "index": 14,
+      "estilos": ""
+    }
+  }
+}    
+
