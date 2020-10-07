@@ -47,7 +47,7 @@ header {
 #titulo h1, #titulo a {
 	line-height: 2.5rem;
 	font-size: 2.5rem;
-	vertical-align: middle;
+	vertitblHor-align: middle;
 	height: 100%;
 	margin: auto;
 	padding: 0;
@@ -115,8 +115,8 @@ footer a {
 }
 /* FIN Estilos para el FOOTER */
 
-/* Estilos para la tabla clase CAL */
-table.cal{
+/* Estilos para la tabla clase tblHor */
+table.tblHor{
 	margin: 1% auto 1%;
 	color: #ffffff;
 	border-collapse: separate;
@@ -137,65 +137,147 @@ tr:last-of-type {
 	background: #00aaff;
 }
 */
-.cal tr:last-child>td:first-child {
+.tblHor tr:last-child>td:first-child {
 /*
 	-webkit-border-radius: 0 0 0 20px;
 	-moz-border-radius: 0 0 0 20px;
 */
 	border-bottom-left-radius: 20px;
 }
-.cal tr:last-child>td:last-child{
+.tblHor tr:last-child>td:last-child{
 /*
 	-webkit-border-radius: 0 0 20px 0;
 	-moz-border-radius: 0 0 20px 0;
 */
 	border-bottom-right-radius: 20px;
 }
-.cal caption {
+.tblHor caption {
 	color: #112d4e;
 	text-align: center;
 	font-weight: 650;
 	background: #FFFFFF;
 }
-.cal tr:last-child>th:last-child{
+.tblHor tr:last-child>th:last-child{
 	border-top-right-radius: 20px;
 }
-.cal tr:last-child>th:first-child{
+.tblHor tr:last-child>th:first-child{
 	border-top-left-radius: 20px;
 }
-.cal tr:last-child>th:first-child:hover{
+.tblHor tr:last-child>th:first-child:hover{
 	border-top-left-radius: 20px;
 }
-.cal tr:hover {
+.tblHor tr:hover {
 	background: #112d4e;
 	font-weight: 600;
-	transform: scaleY(1.25);
+	transform: stblHoreY(1.25);
 }
-.cal th{
+.tblHor th{
 	text-align: center;
 	background: #FFFFFF;
 	color: #112d4e;
 }
-.cal td{
-	vertical-align: middle;
+.tblHor td{
+	vertitblHor-align: middle;
 /*	padding: 0 0.5% 0.5%;*/
 	border: #c0c0c0 1px solid;
 }
-.cal td, .cal th {
+.tblHor td, .tblHor th {
 	padding: 3px;
 }
-.cal a {
+.tblHor a {
 	color: white;
 	text-decoration: none;
 	font-weight: 700;
 	width: 100%;
 }
-/* FIN Estilos para la tabla clase CAL */
+.tblHor .tituloTotal {
+	text-align: center;
+	background: #121442;
+	font-size: 130%;
+	font-weight: 600;
+}
+.tblHor .total {
+	background: #6e626f;
+	font-size: 120%;
+	font-weight: 650;
+	font-style: italic;
+}
+/* FIN Estilos para la tabla clase tblHor */
+
+/* Estilos para la tabla clase tblVer */
+table.tblVer{
+	margin: 1% auto 1%;
+	color: #ffffff;
+	border-collapse: separate;
+	border-radius: 25px 25px 25px 25px;
+	background: #3f72af;
+	max-width: 55%;
+}
+.tblVer tr:last-child>td:first-child {
+	border-bottom-left-radius: 20px;
+}
+.tblVer tr:last-child>td:last-child{
+	border-bottom-right-radius: 20px;
+}
+.tblVer caption {
+	color: #112d4e;
+	text-align: center;
+	font-weight: 650;
+	background: #FFFFFF;
+}
+.tblVer tr:first-child>th:first-child{
+	border-top-left-radius: 20px;
+}
+.tblVer tr:first-child>th:first-child:hover{
+	border-top-left-radius: 20px;
+}
+
+.tblVer tr:last-child>th:last-child{
+	border-top-right-radius: 20px;
+}
+.tblVer tr:last-child>th:first-child{
+	border-bottom-left-radius: 20px;
+}
+.tblVer tr:last-child>th:first-child:hover{
+	border-bottom-left-radius: 20px;
+}
+.tblVer tr:hover {
+	background: #112d4e;
+	font-weight: 600;
+	transform: stblHoreY(1.25);
+}
+.tblVer th{
+	text-align: center;
+	background: #FFFFFF;
+	color: #112d4e;
+}
+.tblVer td{
+	vertical-align: middle;
+/*	padding: 0 0.5% 0.5%;*/
+	border: #c0c0c0 1px solid;
+}
+.tblVer td, .tblHor th {
+	padding: 3px;
+}
+.tblVer tr td{
+	text-align: center;
+}
+.tblVer a {
+	color: white;
+	text-decoration: none;
+	font-weight: 700;
+	width: 100%;
+}
+.tblStock {
+	max-width: 50%;
+}
+/* FIN Estilos para la tabla clase tblVer */
 
 /* Estilos ELEMENTOS: */
 a{
 	color: #112d4e;
 	font-size: 110%;
+	text-align: center;
 }
 h1 {
 	margin: 0 auto 1%;
@@ -203,12 +285,16 @@ h1 {
 	text-decoration: underline;
 	font-weight: 600;
 }
+h2, h3 {
+	text-align: center;
+}
 p {
 	margin: 0.5% 0;
 }
 form {
 /*	background: #ffa9c9;*/
 	background: #b9b0b4;
+	background: #5c6394;
 	padding: 2%;
 	margin: 2% auto 0;
 	max-width: 70%;
@@ -218,7 +304,7 @@ form {
 form div {
 	margin-top: 2%;
 }
-form.editar, form.agregar{
+form.editar, form.agregar, form.stock{
 	max-width: 50%;
 }
 label {
@@ -233,9 +319,12 @@ label {
 	text-align: center;
 	font-size: 120%;
 	color: #112d4e;
+	background: #ffffff;
 	font-weight: 600;
 }
-
+.frmHeader {
+	background: #ffff33;
+}
 input[type="text"]:blur, input[type="number"]:blur, textarea:blur {
 	font-size: inherit;
   background-color: #ffffff;
@@ -243,7 +332,7 @@ input[type="text"]:blur, input[type="number"]:blur, textarea:blur {
   color: inherit;
 }
 input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
-	transform: scaleY(1.4);
+	transform: stblHoreY(1.4);
   background-color: #e7f128;
   font-weight: bolder;
   color: #ff0000;
@@ -255,6 +344,17 @@ input:read-only {
 }
 /* FIN Estilos ELEMENTOS */
 
+/* Estilos para los diferentes títulos */
+.entidad, .producto {
+	font-weight: 700;
+	font-style: italic;
+}
+.totProd {
+	font-weight: 600;
+	color: #ff0000;
+}
+/* FIN Estilos para los diferentes títulos */
+
 /* Estilos para el select con la sugerencia de productos: */
 #hint {
   max-width: 100%;
@@ -263,7 +363,7 @@ input:read-only {
   overflow-y: auto;
 }
 #hint option:checked {
-	transform: scaleY(1.2);
+	transform: stblHoreY(1.2);
 	font-size: 1.25em;
 	font-weight: 600;
 }
@@ -310,10 +410,10 @@ input:read-only {
 	background: #ffffff;
 }
 #historial {
-	margin: 2% auto;
+	margin: 2% 25%;
 	padding: 1%;
 	display: block;
-	width: 15%;
+	width: 30%;
 }
 /* FIN Estilos para el resumen del producto */
 
@@ -348,12 +448,14 @@ input:read-only {
   color: red;
 }
 .resaltarPlastico {
-  background-color: #ff9999;
+	background-color: #ff9999;
+	background: #fd4646;
   font-size: 1.1em;
   font-weight: bolder;
 }
 .resaltarComentario {
-  background-color: #d3d3d3;
+	background-color: #d3d3d3;
+	background: #616161;
   font-size: 1.1em;
   font-weight: bolder;
 }
@@ -425,7 +527,9 @@ input:read-only {
 	font-weight: 600;
 	text-align: center;
 }
-
+.login {
+	background: #fffb83;
+}
 .tipoExito, .cantidadExito, .estadoOK, .estadoError {
 	color: #ff0000;
 }
@@ -558,5 +662,4 @@ input:read-only {
 	background-color: #ffb8d7;  
 	font-size: 95%; 
 }
-
 /**************************** FIN MODAL **************************************/

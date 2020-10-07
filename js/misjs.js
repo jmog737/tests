@@ -204,7 +204,7 @@ function showHint(str, id, seleccionado) {
 			
       /// Agregado a pedido de Diego para que se abra el select automáticamente:
       var length = parseInt($('#hint> option').length, 10);
-			var limiteSelects = 10;
+			var limiteSelects = 4;
 			
       if (length > limiteSelects) {
         length = limiteSelects;

@@ -40,6 +40,15 @@ else {
 }
 //$dir = "//".$hostname."/Reportes/";
 
+if (!file_exists($dir)){
+  $oldFolder = $dir;
+  $unidad = "D:";
+  $dir = $unidad."/Reportes/";
+  if (!file_exists($dir)){
+    echo "No existe ni la carpeta ".$oldFolder." ni la carpeta ".$dir."<br>Por favor verifique.";
+  }  
+}
+//echo "Ruta base: ".$dir;
 $dirExcel = $dir;
 $dirLog = $dir."Logs/";
 $dirGraficas = $dir."/graficas/";
@@ -47,10 +56,6 @@ $rutaFotos = "images/snapshots";
 
 if (!file_exists($unidad)) {
   $unidad = "C:";
-}
-
-if (!file_exists($dir)){
-  echo "No existe la carpeta: $dir. <br>Por favor verifique.";
 }
 
 if (!isset($_SESSION["tamPagina"])){

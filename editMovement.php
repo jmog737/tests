@@ -6,7 +6,10 @@ session_start();
 
 // If the user is not logged in, go back to index.php
 if (!isset($_SESSION['user_id'])) {
-  die("ACCESO DENEGADO.");
+	$mensaje = "Usuario <strong>NO</strong> logueado!.<br>ACCESO DENEGADO.<br><br>";
+	$link = "<a href='login.php'>Ingresar</a>";
+	$mensaje .= $link;
+  die($mensaje);
   return;
 }
 
@@ -216,7 +219,9 @@ require_once('head.php');
       </form>
       <div class="captionContainer">
 			  <span>Formulario para editar el movimiento</span>
-		  </div> 
+      </div> 
+      <br>
+      <a href='index.php' style='display:block'>Volver a inicio</a>
     </div>
   </main>
 

@@ -28,7 +28,10 @@
 					<a class="nav-link <?= $addMovement ?>" href="addMovement.php">Agregar</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link <?= $find ?>" href="buscar.php">Buscar</a>
+					<a class="nav-link <?= $findStock ?>" href="findStock.php">Stock</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link <?= $findMovement ?>" href="findMovement.php">Movimientos</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link <?= $stats ?>" href="estadisticas.php">Estad&iacute;sticas</a>

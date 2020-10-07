@@ -1,5 +1,5 @@
 <!-- Modal de cambio de FECHA -->
-<div class="modal fade" id="modalCbioFecha" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true">
+<div class="modal fade" id="modalCbioFecha" tabindex="-1" role="dialog" aria-labelledby="btnModalCbioFechaCerrar" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document"> 
     <!-- Modal content-->
     <div class="modal-content">
@@ -27,7 +27,7 @@
 </div><!-- FIN Modal de cambio de FECHA -->
 
 <!-- Modal para cambiar la contraseña -->
-<div class="modal fade" id="modalPwd" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true">
+<div class="modal fade" id="modalPwd" tabindex="-1" role="dialog" aria-labelledby="btnModalCerrar" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document"> 
     <!-- Modal content-->
     <div class="modal-content">
@@ -59,14 +59,14 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" title="Cambiar la contraseña" id="btnModal">Actualizar</button>
-        <button type="button" class="btn btn-primary" title="Cerrar ventana SIN modificar la contraseña" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" title="Cerrar ventana SIN modificar la contraseña" id="btnModalCerrar" data-dismiss="modal">Cerrar</button>
       </div>
     </div>   
   </div>
 </div><!-- FIN Modal para cambiar la contraseña -->
 
 <!-- Modal para cambiar los parámetros de visualización -->
-<div class="modal fade" id="modalParametros" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true">
+<div class="modal fade" id="modalParametros" tabindex="-1" role="dialog" aria-labelledby="btnParamCerrar" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document"> 
     <!-- Modal content-->
     <div class="modal-content">
@@ -110,7 +110,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" title="Cambiar par&acute;metros" id="btnParam">Actualizar</button>
-        <button type="button" class="btn btn-primary" title="Cerrar ventana SIN modificar los par&aacute;metros" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" title="Cerrar ventana SIN modificar los par&aacute;metros" id="btnParamCerrar" data-dismiss="modal">Cerrar</button>
       </div>
     </div>   
   </div>

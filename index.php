@@ -74,7 +74,7 @@ require_once ('head.php');
 			
 			if (count($rows) > 0) {	
 				$i = 1;
-				echo '<table class="cal">  
+				echo '<table class="tblHor">  
 							<caption>Tabla con los &uacute;ltimos movimientos</caption>
 								<thead>
 									<tr>';	
@@ -106,10 +106,7 @@ require_once ('head.php');
 								$fechaTemp = explode("-", $row[$campo["campo"]]); 
 								$row[$campo["campo"]] = $fechaTemp[2]."/".$fechaTemp[1]."/".$fechaTemp[0];
 							}
-							if ($campo["campo"] === "hora"){
-								$fechaTemp = explode(":", $row[$campo["campo"]]); 
-								$row[$campo["campo"]] = $fechaTemp[0].":".$fechaTemp[1];
-							}
+							
 							if ($campo["campo"] === "cantidad"){
 								echo "<td title='Click para EDITAR' style='text-align: ".$campo["align"]."'><a target='_blank' href='editMovement.php?idprod=".$row['idmov']."'>".number_format($row[$campo["campo"]], 0, ',', '.')."</a></td>";
 							}
