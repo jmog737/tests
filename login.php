@@ -55,7 +55,7 @@ if ( isset($_POST["usuario"]) && isset($_POST["pwd"]) ) {
         }
         require_once('data/config.php');
         setcookie('tiempo', time(), time()+TIEMPOCOOKIE);
-        $_SESSION["success"] = "- Bienvenid@ ".strtoupper($row['user'])." -";
+        $_SESSION["success"] = "<span class='login'>- Bienvenid@ ".strtoupper($row['user'])." -</span>";
         header( 'Location: index.php' ) ;
         return;
       }

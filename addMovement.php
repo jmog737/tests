@@ -3,13 +3,12 @@ session_start();
 require_once "data/pdo.php";
 require_once "data/util.php";
 
-/*if(!isset($_SESSION)) 
-  { 
-  session_start(); 
-} */
-
+// If the user is not logged in, go back to index.php
 if (!isset($_SESSION['user_id'])) {
-  die("ACCESO DENEGADO.");
+	$mensaje = "Usuario <strong>NO</strong> logueado!.<br>ACCESO DENEGADO.<br><br>";
+	$link = "<a href='login.php'>Ingresar</a>";
+	$mensaje .= $link;
+  die($mensaje);
   return;
 }
 
@@ -170,6 +169,8 @@ require_once ('head.php');
 		<div class="captionContainer">
 		<span>Formulario para agregar un movimiento</span>
 		</div> 
+		<br>
+		<a href='index.php' style='display:block'>Volver a inicio</a>
   </div>
 	</main>	
 	<?php
